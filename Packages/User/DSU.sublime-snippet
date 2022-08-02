@@ -1,0 +1,31 @@
+<snippet>
+  <content><![CDATA[
+struct unionFind {
+    vector<int> parent, sz;
+
+    unionFind (int n) {
+        parent = vector<int> (n + 1, 0);
+        sz = vector<int> (n + 1, 1);
+        for (int i = 1; i <= n; i++) parent[i] = sz[i] = i;
+    }
+
+    int size(int u) { return sz[find(u)]; }
+    int find(int u) {
+        return parent[u] = (parent[u] == u) ? u : find(parent[u]);
+    }
+
+    void join(int u, int v) {
+        int a = find(u);
+        int b = find(v);
+        if (a == b) return;
+        if (sz[a] < sz[b]) swap(a, b);
+        parent[b] = a;
+        sz[a] += sz[b];
+    }
+};
+]]></content>
+  <tabTrigger>unionFind</tabTrigger>
+  <description></description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope >source.c++</scope >
+</snippet>

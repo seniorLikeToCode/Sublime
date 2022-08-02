@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+vector<int> p(n);
+rep(i, 0, n) p[i] = i + 1;
+do {
+	rep(i, 0, n) cout << p[i] << " \n"[i == n - 1];
+} while (next_permutation(all(p)));
+
+]]></content>
+  <tabTrigger>all_permutations</tabTrigger>
+  <description></description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope >source.c++</scope >
+</snippet>

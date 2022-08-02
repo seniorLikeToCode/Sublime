@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+tuple<int, int, int> gcd(int a, int b) {
+	if (b == 0) return {1, 0, a};
+	int x, y, g;
+	tie(x, y, g) = gcd(b, a % b);
+	return {y, x - (a / b)*y, g};
+}
+
+int x, y, g;
+tie(x, y, g) = gcd(a, b);
+
+]]></content>
+  <tabTrigger>equationInGcd</tabTrigger>
+  <description></description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope >source.c++</scope >
+</snippet>

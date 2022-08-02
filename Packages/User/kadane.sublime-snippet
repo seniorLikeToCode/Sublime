@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+int kadane(vector <int> &v) {
+	int best = 0, sum = 0;
+	int n = sz(v);
+	for (int k = 0; k < n; k++) {
+		sum = max(v[k], sum + v[k]);
+		best = max(best, sum);
+	}
+	return best;
+}
+]]></content>
+  <tabTrigger>kadane</tabTrigger>
+  <description>kadane</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope >source.c++</scope >
+</snippet>

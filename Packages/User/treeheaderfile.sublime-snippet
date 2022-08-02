@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+struct tree {
+	int val;
+	tree *left, *right;
+	tree() : val(0), left(nullptr), right(nullptr) {}
+	tree(int x) : val(x), left(nullptr), right(nullptr) {}
+	tree(int x, tree *left, tree *right) : val(x), left(left), right(right) {}
+};
+]]></content>
+  <tabTrigger>tree</tabTrigger>
+  <description>Tree</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope >source.c++</scope >
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+  <content><![CDATA[
+const int seiveSize = 1e6 + 1;
+vector<bool> is_prime(seiveSize + 1, true);
+void sieve(int n) {
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i <= n; i++) {
+        if (is_prime[i] && (long long)i * i <= n) {
+            for (int j = i * i; j <= n; j += i)
+                is_prime[j] = false;
+        }
+    }
+}
+]]></content>
+  <tabTrigger>sieve</tabTrigger>
+  <description></description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope >source.c++</scope >
+</snippet>
